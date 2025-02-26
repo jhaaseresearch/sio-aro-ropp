@@ -10,5 +10,7 @@ For access to the sio-ropp repository, users should contact Dr. Jennifer Haase (
 
 The sio-ropp repository contains the modified subroutines for the ARO forward operator and its tangent linear and adjoint code, as well as information on how to build the modified ROPP code within the Joint Effort for Data Assimilation Integration (JEDI) framework https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/. For building, testing and packaging, JEDI relies on Cmake [Cmake](https://cmake.org/). Therefore, files needed for the compiler flags, target dependencies, and packages are included in the sio-ropp repository. For more details about using Cmake in JEDI, please see https://jointcenterforsatellitedataassimilation-jedi-docs.readthedocs-hosted.com/en/latest/inside/developer_tools/cmake.html.
 
+The JEDI IODA converter to read and convert the ARO data can be found here, pending incorporation into the JCSDA JEDI. https://github.com/jhaaseresearch/aro-converter2ioda
+
 References:
 Forward modeling of bending angles with a two-dimensional operator for GNSS airborne radio occultations in atmospheric rivers, Hordyniec P, Haase JS, Murphy MJ Jr, Cao B, Wilson AM., Journal of Advances in Modeling Earth Systems (JAMES), submitted, 2024.
