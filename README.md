@@ -12,5 +12,7 @@ The sio-ropp repository contains the modified subroutines for the ARO forward op
 
 The JEDI IODA converter to read and convert the ARO data can be found here, pending incorporation into the JCSDA JEDI. https://github.com/jhaaseresearch/aro-converter2ioda
 
+The mpas-bundle for using the ARO modified ROPP with MPAS-JEDI is available at https://github.com/JCSDA-internal/mpas-bundle/tree/release/2.1.0. For access to the mpas-bundle repository, users should contact Joint Center for Satellite Data Assimilation.
+
 References:
 Forward modeling of bending angles with a two-dimensional operator for GNSS airborne radio occultations in atmospheric rivers, Hordyniec P, Haase JS, Murphy MJ Jr, Cao B, Wilson AM., Journal of Advances in Modeling Earth Systems (JAMES), submitted, 2024.
