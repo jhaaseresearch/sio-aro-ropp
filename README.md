@@ -20,7 +20,7 @@ The **modified ROPP 2D bending angle operator** for **ARO observations** (which 
 🔗 [sio-ropp Repository](https://github.com/jhaaseresearch/sio-ropp)  
 
 ### **Requesting Access**  
-For repository access, please contact:  
+For ***sio-ropp*** repository access, please contact:  
 📧 **Dr. Jennifer Haase** (jhaase@ucsd.edu)  
 🏫 **Professor of Geophysics, Scripps Institution of Oceanography, University of California, San Diego**  
 🔬 **Principal Investigator for Airborne Radio Occultation (ARO)**  
@@ -59,3 +59,7 @@ For access, please contact the **Joint Center for Satellite Data Assimilation (J
 📄 **Hordyniec P., Haase J.S., Murphy M.J. Jr, Cao B., Wilson A.M.**  
 *Forward modeling of bending angles with a two-dimensional operator for GNSS airborne radio occultations in atmospheric rivers.*  
 **Journal of Advances in Modeling Earth Systems (JAMES), Submitted, 2024.**  
+
+📄 **Phuong-Nghi Do, J. S. Haase, I. H. Banos, P. Hordyniec, B. Cao**  
+*Impact of Airborne Radio Occultation Observations on Short Term Precipitation Forecasts of an Atmospheric River.*  
+**Geophysical Research Letters [preprint], Submitted, 2025.**  
