@@ -27,9 +27,9 @@ For ***sio-aro-ropp_f90*** repository access, please contact:
 
 ---
 
-## **3. Contents of the sio-aro-ropp_f90 Repository**  
+## **3. Contents of the sio-aro-ropp-f90 Repository**  
 
-The `sio-aro-ropp_f90` repository includes:  
+The `sio-aro-ropp-f90` repository includes:  
 - ✅ Modified subroutines for the **ARO forward operator**, **tangent linear**, and **adjoint code**.  
 - ✅ Instructions on building the modified **ROPP code** within the **Joint Effort for Data Assimilation Integration (JEDI)** framework.  
 - ✅ CMake files for **compiler flags, target dependencies, and package configurations** for JEDI.  
