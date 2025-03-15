@@ -1,6 +1,6 @@
-# **sio-aro-ropp**  
+# **sio-aro-ropp (instructions only)**  
 
-This repository provides instructions for obtaining and using the **modified ROPP 2D bending angle operator** for **Airborne Radio Occultation (ARO)** under the `sio-ropp` repository.  
+This repository provides instructions for obtaining and using the **modified ROPP 2D bending angle operator** for **Airborne Radio Occultation (ARO)** under the `sio-aro-ropp-f90` (source code) repository.  
 
 ## **1. Overview**  
 
