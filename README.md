@@ -20,7 +20,7 @@ The **modified ROPP 2D bending angle operator** for **ARO observations** (which 
 🔗 [sio-aro-ropp-f90](https://github.com/jhaaseresearch/sio-aro-ropp-f90)  
 
 The parallel versions implemented in MATLAB and Python are available here:  
-🔗 [sio-aro-ropp-mat-py](https://github.com/jhaaseresearch/sio-aro-ropp-mat-py)  
+🔗 [sio-aro-ropp-mat_py](https://github.com/jhaaseresearch/sio-aro-ropp-mat_py)  
 
 ### **Requesting Access**  
 For repository access, please contact:  
