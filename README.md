@@ -20,7 +20,7 @@ The **modified ROPP 2D bending angle operator** for **ARO observations** (which 
 🔗 [sio-aro-ropp-f90](https://github.com/jhaaseresearch/sio-aro-ropp-f90)  
 
 ### **Requesting Access**  
-For ***sio-aro-ropp_f90*** repository access, please contact:  
+For repository access, please contact:  
 📧 **Dr. Jennifer Haase** (jhaase@ucsd.edu)  
 🏫 **Professor of Geophysics, Scripps Institution of Oceanography, University of California, San Diego**  
 🔬 **Principal Investigator for Airborne Radio Occultation (ARO)**  
