@@ -30,7 +30,7 @@ For repository access, please contact:
 
 ---
 
-## **3. Contents of the sio-aro-ropp-f90 Repository**  
+## **3. Contents of the sio-aro-ropp-f90 repository**  
 
 The `sio-aro-ropp-f90` repository includes:  
 - ✅ Modified subroutines for the **ARO forward operator**, **tangent linear**, and **adjoint code**.  
