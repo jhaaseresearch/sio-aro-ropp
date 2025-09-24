@@ -48,7 +48,7 @@ For more details on JEDI and CMake, refer to:
 ### **ARO Data Converter for JEDI**  
 The **JEDI IODA converter** to read and convert ARO data is available here:  
 🔗 [ARO Converter to IODA](https://github.com/jhaaseresearch/aro-converter2ioda)  
-*Note: This converter is also integrated into JEDI ioda-converters repository here:  
+*Note: This converter is also integrated into JEDI ioda-converters repository here:*  
 🔗 [ioda-converters](https://github.com/JCSDA-internal/ioda-converters.git)
 
 ### **Using ARO-Modified ROPP with MPAS-JEDI**  
