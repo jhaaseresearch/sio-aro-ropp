@@ -47,7 +47,9 @@ For more details on JEDI and CMake, refer to:
 
 ### **ARO Data Converter for JEDI**  
 The **JEDI IODA converter** to read and convert ARO data is available here:  
-🔗 [ARO Converter to IODA](https://github.com/jhaaseresearch/aro-converter2ioda) *(Pending incorporation into JEDI)*  
+🔗 [ARO Converter to IODA](https://github.com/jhaaseresearch/aro-converter2ioda)  
+*Note: This converter is also integrated into JEDI ioda-converters repository here:*  
+🔗 [ioda-converters](https://github.com/JCSDA-internal/ioda-converters.git)
 
 ### **Using ARO-Modified ROPP with MPAS-JEDI**  
 For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the following repository:  
@@ -59,10 +61,10 @@ For access, please contact the **Joint Center for Satellite Data Assimilation (J
 
 ## **5. References**  
 
-📄 **Hordyniec P., Haase J.S., Murphy M.J. Jr, Cao B., Wilson A.M.**  
+📄 **Hordyniec P., Haase J.S., Murphy M.J. Jr, Cao B., Wilson A.M., Banos, I.H.**  
 *Forward modeling of bending angles with a two-dimensional operator for GNSS airborne radio occultations in atmospheric rivers.*  
-**Journal of Advances in Modeling Earth Systems (JAMES), Submitted, 2024.**  
+**Journal of Advances in Modeling Earth Systems, 17, e2024MS004324. https://doi.org/10.1029/2024MS004324**  
 
-📄 **Phuong-Nghi Do, J. S. Haase, I. H. Banos, P. Hordyniec, B. Cao**  
-*Impact of Airborne Radio Occultation Observations on Short Term Precipitation Forecasts of an Atmospheric River.*  
-**Geophysical Research Letters [preprint], Submitted, 2025.**  
+📄 **Do, P.-N., Haase, J. S., Banos, I. H., Hordyniec, P., Cao, B.**  
+*Impact of airborne radio occultation observations on short term precipitation forecasts of an atmospheric river.*  
+**Geophysical Research Letters, 52, e2025GL115639. https://doi.org/10.1029/2025GL115639**  
