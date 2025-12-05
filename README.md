@@ -19,9 +19,6 @@ To access the **ROPP code**, users must:
 The **modified ROPP 2D bending angle operator** for **ARO observations** (which requires an ROPP license) is available here:  
 🔗 [sio-aro-ropp-f90](https://github.com/jhaaseresearch/sio-aro-ropp-f90)  
 
-The parallel versions implemented in MATLAB and Python are available here:  
-🔗 [sio-aro-ropp-mat_py](https://github.com/jhaaseresearch/sio-aro-ropp-mat_py)  
-
 ### **Requesting Access**  
 For repository access, please contact:  
 📧 **Dr. Jennifer Haase** (jhaase@ucsd.edu)  
