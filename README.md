@@ -50,7 +50,7 @@ The **JEDI IODA converter** to read and convert ARO data is available here:
 
 ### **Using ARO-Modified ROPP with MPAS-JEDI**  
 For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the following repository:  
-🔗 [MPAS-Bundle Repository](https://github.com/JCSDA-internal/mpas-bundle/tree/release/2.1.0)  
+🔗 [MPAS-Bundle Repository](https://github.com/JCSDA/mpas-bundle/tree/release/3.0.2)  
 
 For access, please contact the **Joint Center for Satellite Data Assimilation (JCSDA).**  
 
