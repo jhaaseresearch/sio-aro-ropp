@@ -116,7 +116,7 @@ set(MPAS_DOUBLE_PRECISION "ON" CACHE STRING "MPAS-Model: Use double precision 64
 
 6)  Create and navigate into the build directory
    
-mkdir build
+mkdir build  
 cd build
 
 7)	Configure the build using CMake
@@ -161,7 +161,7 @@ If it exits the queue without any apparent error, try again.
 
 11)	Generate a batch job for running mpas-jedi's test suite and submit it using qsub
 
-../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -x ctest -n  
+bash ../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -x ctest -n  
 qsub ctest.pbs.sh  
 chmod u+x ../env-setup/run_make.bundle.sh (if Permission denied)  
 
