@@ -95,7 +95,7 @@ Note: It may be necessary to create a personal access token through github befor
 
 4)	Set up your environment for building mpas-bundle
    
-cd mpas_bundle_v3.0.2  
+cd mpas-bundle_v3.0.2  
 vi env-setup/gnu-derecho.sh
 
 modify environment variables to desired environment
