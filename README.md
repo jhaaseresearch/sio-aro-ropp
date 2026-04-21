@@ -54,136 +54,176 @@ For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the follo
 
 For access, please contact the **Joint Center for Satellite Data Assimilation (JCSDA).**  
 
-## **Building mpas-bundle V3.0.2 on derecho**
-1)	Log into Derecho
+## **Building mpas-bundle v3.0.2 on Derecho**
+
+The steps below are a tested workflow for building MPAS-Bundle release `3.0.2` with ARO-related updates.
+
+1. Log in to Derecho:
+
+```bash
 ssh -Y username@derecho.hpc.ucar.edu
+```
 
-2)	Configure your github environment  
-vi ~/.gitconfig
-<pre>
-[filter "lfs"]  
-        clean = git-lfs clean -- %f  
-        smudge = git-lfs smudge -- %f  
-        process = git-lfs filter-process  
-        required = true  
-[credential]  
-        helper = cache --timeout=3600  
-        helper = store  
-        helper = store  
-[user]  
-        name = username  
-        email = username’s email  
-</pre>
-Or
-\# Set your name  
-git config --global user.name "Your Name"  
-\# Set your email  
-git config --global user.email "yourname@somewhere.something"  
-\# Set credential helper with timeout  
-git config --global credential.helper 'cache --timeout=3600'  
+2. Configure your GitHub identity and credentials:
 
-git config --global credential.helper store 
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "yourname@somewhere.something"
+git config --global credential.helper 'cache --timeout=3600'
+git config --global credential.helper store
+```
 
-3)	Clone the mpas-bundle
+Optional: if you prefer editing `~/.gitconfig` directly, ensure your `user`, `credential`, and `lfs` settings are present and correct.
 
-Go (or create) to the folder where you want to build the repository
+3. Clone `mpas-bundle` release `3.0.2` into a dedicated directory:
 
-Clone the Repository  
+```bash
 git clone -b release/3.0.2 https://github.com/JCSDA/mpas-bundle.git ./mpas-bundle_v3.0.2
+```
 
-Note: It may be necessary to create a personal access token through github before cloning
+Note: a GitHub personal access token may be required.
 
-4)	Set up your environment for building mpas-bundle
-   
-cd mpas-bundle_v3.0.2  
+4. Set up the build environment:
+
+```bash
+cd mpas-bundle_v3.0.2
 vi env-setup/gnu-derecho.sh
-
-modify environment variables to desired environment
-
 source env-setup/gnu-derecho.sh
+```
 
-WARNING: The environment provided with the bundle includes outdated and unsupported modules. It is necessary to upgrade to spack-stack-1.9.3 or newer or else the build will fail. 
+Update environment variables in `env-setup/gnu-derecho.sh` as needed.
 
-5)	Modify CMakeList.txt for your purpose 
+WARNING: The environment provided with the bundle may include outdated/unsupported modules. Upgrade to `spack-stack-1.9.3` or newer, or the build may fail.
 
-For DA ARO, need to get the sio-aro-ropp-ufo and ufo with aro merged in V3.0.2  
-#ecbuild_bundle( PROJECT ropp-ufo  GIT "https://github.com/JCSDA-internal/ropp-test.git"   TAG 96a0397 )  
-ecbuild_bundle( PROJECT sio-ropp-ufo GIT "https://github.com/jhaaseresearch/sio-aro-ropp-f90.git" BRANCH main 
-UPDATE)
+5. Modify `CMakeLists.txt` for ARO DA use:
 
-Turn ON or OFF double precision (ON for running the mpas-jedi test suite, OFF for MPAS-Workflow calculations when using the mpas-bundle build)  
+- Replace the default `ropp-ufo` bundle entry with the ARO-modified source, for example:
+
+```cmake
+# ecbuild_bundle( PROJECT ropp-ufo GIT "https://github.com/JCSDA-internal/ropp-test.git" TAG 96a0397 )
+ecbuild_bundle( PROJECT sio-ropp-ufo GIT "https://github.com/jhaaseresearch/sio-aro-ropp-f90.git" BRANCH main UPDATE )
+```
+
+- Set precision mode based on workflow needs:
+
+```cmake
 set(MPAS_DOUBLE_PRECISION "ON" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")
+```
 
-6)  Create and navigate into the build directory
-   
-mkdir build  
+Use `ON` for running the `mpas-jedi` test suite. Use `OFF` for MPAS-Workflow calculations with the bundle build.
+
+6. Create and enter a build directory:
+
+```bash
+mkdir build
 cd build
+```
 
-7)	Configure the build using CMake
+7. Configure with CMake:
 
+```bash
 cmake ../
+```
 
-if python fails to build, run  
-rm CMakeCache.txt (If it exists from a previous cmake command)  
+If Python configuration fails:
+
+```bash
+rm -f CMakeCache.txt
 cmake -DPython3_EXECUTABLE=$(which python3) ../
+```
 
-8)	Make sure ROPP_ARO "Using ROPP for airborne radio occultation"  is ON
-    
-vi ../ufo/CMakeLists.txt
+8. Verify `ROPP_ARO` (`Using ROPP for airborne radio occultation`) is `ON` in `ufo/CMakeLists.txt`.
 
-9)	clear cached CMake and build ufo
-    
-cd ../build  
-rm CMakeCache.txt  
-cmake ../  
+9. Clear CMake cache and reconfigure (especially after changing CMake options):
 
-If python fails, specify path to python executable  
-rm CMakeCache.txt  
-cmake -DPython3_EXECUTABLE=$(which python3) ../  
+```bash
+cd ../build
+rm -f CMakeCache.txt
+cmake ../
+```
 
-10)	Use the run_make.bundle.sh script to generate a batch job for building.
+If Python fails again, rerun with explicit `Python3_EXECUTABLE` as in Step 7.
 
-Build bundle  
-bash ../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -n  
-qsub make.pbs.sh  
+10. Generate and submit the bundle build batch job:
 
-To give higher priority, add this command to the top of make.pbs.sh  
+```bash
+bash ../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -n
+qsub make.pbs.sh
+```
+
+Optional higher priority (add near top of `make.pbs.sh`):
+
+```bash
 #PBS -l job_priority=premium
+```
 
-To check the job  
-qstat -u username  
-or vi mpas-make*   
+Monitor build progress:
 
-You can also check the job continuously by typing  
-tail -f mpas-make*  
-It won’t necessarily tell you when it has finished, it will just exit the queue.  
-If it exits the queue without any apparent error, try again.
+```bash
+qstat -u username
+tail -f mpas-make*
+```
 
-11)	Generate a batch job for running mpas-jedi's test suite and submit it using qsub
+11. Generate and submit the `mpas-jedi` test suite job:
 
-bash ../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -x ctest -n  
-qsub ctest.pbs.sh  
-chmod u+x ../env-setup/run_make.bundle.sh (if Permission denied)  
+```bash
+bash ../env-setup/run_make.bundle.sh -A <your_project_number> -c gnu -x ctest -n
+qsub ctest.pbs.sh
+```
 
-Check progress  
-tail -f mpas-ctest.*  
-Check ctest log file in mpas-jedi/Testing/Temporary/LastTest.log
+If needed:
 
-12)	Generate a batch job for running ufo's ARO test suite and submit it using qsub
+```bash
+chmod u+x ../env-setup/run_make.bundle.sh
+```
 
-cp ctest.pbs.sh ctest_aro.pbs.sh  
-vi ctest_aro.pbs.sh and modify   
-#cd mpas-jedi && ctest  
-cd ufo && ctest -R gnssaro  
-qsub ctest_aro.pbs.sh  
-Check ctest log file in ufo/Testing/Temporary/LastTest.log  
+Monitor tests and logs:
 
-13)	Compile single precision:
+```bash
+tail -f mpas-ctest.*
+```
 
-After passing all ctests go back to step 5 and in CMakeLists.txt set  
-set(MPAS_DOUBLE_PRECISION "OFF" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")  
+`mpas-jedi` test log location:
 
-Then repeat steps 9 and 10 to complete installation
+```text
+mpas-jedi/Testing/Temporary/LastTest.log
+```
+
+12. Generate and submit the `ufo` ARO test suite job:
+
+```bash
+cp ctest.pbs.sh ctest_aro.pbs.sh
+vi ctest_aro.pbs.sh
+```
+
+In `ctest_aro.pbs.sh`, change:
+
+```bash
+# cd mpas-jedi && ctest
+cd ufo && ctest -R gnssaro
+```
+
+Then submit:
+
+```bash
+qsub ctest_aro.pbs.sh
+```
+
+`ufo` test log location:
+
+```text
+ufo/Testing/Temporary/LastTest.log
+```
+
+13. Build single precision after tests pass:
+
+In `CMakeLists.txt`, set:
+
+```cmake
+set(MPAS_DOUBLE_PRECISION "OFF" CACHE STRING "MPAS-Model: Use double precision 64-bit Floating point.")
+```
+
+Then repeat Steps 9 and 10 to complete the single-precision installation.
 
 ---
 
