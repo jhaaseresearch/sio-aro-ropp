@@ -54,7 +54,7 @@ For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the follo
 
 For access, please contact the **Joint Center for Satellite Data Assimilation (JCSDA).**  
 
-## **Building mpas-bundle v3.0.2 on Derecho**
+## **5. Building mpas-bundle v3.0.2 on Derecho**
 
 The steps below are a tested workflow for building MPAS-Bundle release `3.0.2` with ARO-related updates.
 
