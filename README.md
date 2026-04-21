@@ -42,17 +42,17 @@ For more details on JEDI and CMake, refer to:
 
 ## **4. Additional Resources**  
 
-### **ARO Data Converter for JEDI**  
-The **JEDI IODA converter** to read and convert ARO data is available here:  
-🔗 [ARO Converter to IODA](https://github.com/jhaaseresearch/aro-converter2ioda)  
-*Note: This converter is also integrated into JEDI ioda-converters repository here:*  
-🔗 [ioda-converters](https://github.com/JCSDA-internal/ioda-converters.git)
-
-### **Using ARO-Modified ROPP with MPAS-JEDI**  
-For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the following repository:  
-🔗 [MPAS-Bundle Repository](https://github.com/JCSDA/mpas-bundle/tree/release/3.0.2)  
-
-For access, please contact the **Joint Center for Satellite Data Assimilation (JCSDA).**  
+  ### **ARO Data Converter for JEDI**  
+  The **JEDI IODA converter** to read and convert ARO data is available here:  
+  🔗 [ARO Converter to IODA](https://github.com/jhaaseresearch/aro-converter2ioda)  
+  *Note: This converter is also integrated into JEDI ioda-converters repository here:*  
+  🔗 [ioda-converters](https://github.com/JCSDA-internal/ioda-converters.git)
+  
+  ### **Using ARO-Modified ROPP with MPAS-JEDI**  
+  For integrating the **ARO-modified ROPP** with **MPAS-JEDI**, refer to the following repository:  
+  🔗 [MPAS-Bundle Repository](https://github.com/JCSDA/mpas-bundle/tree/release/3.0.2)  
+  
+  For access, please contact the **Joint Center for Satellite Data Assimilation (JCSDA).**  
 
 ## **5. Building mpas-bundle v3.0.2 on Derecho**
 
